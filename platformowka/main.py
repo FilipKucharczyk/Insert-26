@@ -29,7 +29,7 @@ pygame.display.set_caption("Geomtryczny skok!!!")
 #Sciezka wzgledna
 gracz = pygame.image.load("./platformowka/assets/cube.png")
 #Sciezka bezwzgledna
-gracz = pygame.image.load("C:/Users/clientadmin/Documents/Filip Insert wtorek/platformowka/assets/cube.png")
+#gracz = pygame.image.load("C:/Users/clientadmin/Documents/Filip Insert wtorek/platformowka/assets/cube.png")
 gracz = pygame.transform.scale(gracz, (ROZMIAR, ROZMIAR))
 
 gra_dziala = True
@@ -46,16 +46,20 @@ while gra_dziala:
                 Y += KROK
             elif event.key == pygame.K_UP:
                 Y -= KROK
-        #Ograniczenia
-        if X < 0 :      #Lewa
-            X = 0
-        if X > SZEROKOSC - ROZMIAR: #Prawa
-            X = SZEROKOSC - ROZMIAR
-        if Y < 0:  #Góra
-            Y = 0
-        if Y > WYSOKOSC - ROZMIAR: #Dół
-            Y = WYSOKOSC - ROZMIAR
-              
+    #Ograniczenia
+    if X < 0 :      #Lewa
+        X = 0
+    if X > SZEROKOSC - ROZMIAR: #Prawa
+        X = SZEROKOSC - ROZMIAR
+    if Y < 0:  #Góra
+        Y = 0
+    if Y > WYSOKOSC - ROZMIAR: #Dół
+        Y = WYSOKOSC - ROZMIAR
+        
+    
+    #Grawitacja  
+    Y += 2
+         
     ekran.fill(TLO)
     
     ekran.blit(gracz,(X,Y))
