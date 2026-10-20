@@ -24,8 +24,13 @@ ekran = pygame.display.set_mode((SZEROKOSC,WYSOKOSC))
 pygame.display.set_caption("Geomtryczny skok!!!")
 
 #Tworzenie gracza 
-gracz = pygame.Surface((ROZMIAR, ROZMIAR))
-gracz.fill(GRACZOWY)
+#gracz = pygame.Surface((ROZMIAR, ROZMIAR))
+#gracz.fill(GRACZOWY)
+#Sciezka wzgledna
+gracz = pygame.image.load("./platformowka/assets/cube.png")
+#Sciezka bezwzgledna
+gracz = pygame.image.load("C:/Users/clientadmin/Documents/Filip Insert wtorek/platformowka/assets/cube.png")
+gracz = pygame.transform.scale(gracz, (ROZMIAR, ROZMIAR))
 
 gra_dziala = True
 while gra_dziala:
